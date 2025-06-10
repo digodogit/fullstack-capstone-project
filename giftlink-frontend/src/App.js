@@ -11,8 +11,6 @@ import './App.css';
 
 
 function App() {
-  const navigate = useNavigate();
-
   return (
     <>
       <Navbar/>

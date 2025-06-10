@@ -43,7 +43,7 @@ function DetailsPage() {
 		// Task 3: Scroll to top on component mount
 		window.scrollTo(0, 0);
 
-    }, [productId]);
+    }, [productId, navigate]);
 
 
     const handleBackClick = () => {
@@ -90,38 +90,30 @@ return (
                 <div className="card-body">
                     <div className="image-placeholder-large">
                         {gift.image ? (
-			// Task 5: Display gift image
                             <img src={gift.image} alt={gift.name} className="product-image-large" />
                         ) : (
                             <div className="no-image-available-large">No Image Available</div>
                         )}
                     </div>
-                    // Task 6: Display gift details
                     	<p><strong>Category:</strong> 
-                    {/* insert code here  */}
                     {gift.category}
 			</p>
                     	<p><strong>Condition:</strong> 
-				{/* insert code here  */}
                     {gift.condition}
                     	</p>
                     	<p><strong>Date Added:</strong> 
-				{/* insert code here  */}
                         {gift.date_added}
                         </p>
                     	<p><strong>Age (Years):</strong> 
-				{/* insert code here  */}
                     {gift.age}
                     	</p>
                     	<p><strong>Description:</strong> 
-				{/* insert code here  */}
                     {gift.description}
                     	</p>
                 </div>
             </div>
             <div className="comments-section mt-4">
                 <h3 className="mb-3">Comments</h3>
-				// Task 7: Render comments section by using the map function to go through all the comments
 				{comments.map((comment, index) => (
                     <div key={index} className="card mb-3">
                         <div className="card-body">

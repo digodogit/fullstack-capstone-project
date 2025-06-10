@@ -50,6 +50,7 @@ useEffect(() => {
       document.getElementById("email").value="";
       document.getElementById("password").value="";
       setIncorrect("Wrong password. Try again.");
+      console.log(incorrect)
       setTimeout(() => {
         setIncorrect("");
       }, 2000);
