@@ -1,10 +1,12 @@
-import { connectToDatabase as dbInstance } from 'models/db';
+const express = require('express');
+const router = express.Router();
+const { connectToDatabase } = require('../models/db');
 
 router.get('/', async (req, res) => {
     try {
         // Task 1: Connect to MongoDB and store connection to db constant
         // const db = {{insert code here}}
-        const db = await dbInstance()        
+        const db = await connectToDatabase()        
         
         // Task 2: use the collection() method to retrieve the gift collection
         const giftsCollection = db.collection('gifts')
@@ -24,7 +26,7 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
     try {
         // Task 1: Connect to MongoDB and store connection to db constant
-        const db = await dbInstance()    
+        const db = await connectToDatabase()    
 
         // Task 2: use the collection() method to retrieve the gift collection
         const giftsCollection = db.collection('gifts')
